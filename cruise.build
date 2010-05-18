@@ -66,7 +66,7 @@
 
 
   <target name="compile" depends="pre-clean,version">
-    <exec program="${nant.settings.currentframework.frameworkdirectory}\msbuild.exe" commandline="source\StructureMap.sln /t:rebuild /p:Configuration=Release">
+    <exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe" commandline="source\StructureMap.sln /t:rebuild /p:Configuration=Release">
     </exec>
 
     <copy todir="${build.dir}" flatten="true" overwrite="true">
